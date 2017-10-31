@@ -1,6 +1,3 @@
-const arrSize = 50
-const heightMultiplier = 3 // TODO remove this
-
 
 function genRandomArr(size) {
   const arr = new Array(size)
@@ -19,7 +16,7 @@ function genRandomArr(size) {
 
 function genDOMArrayHTML(arr) {
   const list = arr.map((val, idx) => (
-    `<li class='bar' id='${idx}' style="height:${val * heightMultiplier}px">${val}</li>`
+    `<li class='bar' id='${idx}' style="height:${val * config.heightMultiplier}px">${val}</li>`
   ))
   return list.join('')
 }
@@ -60,7 +57,7 @@ function insertionSort(arr) {
 
 
 function main() {
-  const arr = genRandomArr(arrSize)
+  const arr = genRandomArr(config.arrSize)
   const DOMArrayHTML = genDOMArrayHTML(arr)
   insertDOMArray(DOMArrayHTML)
 
