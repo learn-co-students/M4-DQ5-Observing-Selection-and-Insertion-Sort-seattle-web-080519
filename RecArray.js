@@ -2,14 +2,14 @@
 // add on top of it with callbacks!
 
 class RecArray {
-  constructor(arr) {
+  constructor(arr, domId) {
+    this.domId = domId
     this.arr = arr
     this.domRefs = this.getDomRefs()
     this.recorder = new Recorder(this.domRefs, this.arr)
 
     this.traps = {
       get: (target, property) => {
-        // console.log('getting property ' + property + ' => ' + target[property])
         if (property >= 0 && property <= this.arr.length)
           this.recorder.capture({type: "flash", color: "green", id: property})
         return target[property]
@@ -30,7 +30,7 @@ class RecArray {
 
   getDomRefs() {
     return this.arr.reduce((acc, val, idx) => {
-      acc[idx] = document.getElementById(idx)
+      acc[idx] = document.getElementById(`${this.domId}-${idx}`)
       return acc
     }, {})
   }

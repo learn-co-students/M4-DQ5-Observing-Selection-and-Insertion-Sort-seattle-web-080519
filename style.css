@@ -8,14 +8,16 @@ html, body {
 #array-display-container {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
   min-width: 1000px;
-  height: 80%;
+  height: 100%;
   min-height: 500px;
+
 }
 
-#array-list {
+.array-list {
   display: flex;
   justify-content: center;
   align-items: flex-end;

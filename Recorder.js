@@ -43,7 +43,7 @@ class Recorder {
         const bgColor = this.assertOrdered(this.arr[frameIdx], prevVal) ? '#6E6' : '#E66'
         this.domRefs[frameIdx].style.backgroundColor = bgColor
       } catch(err) {
-        console.error("This should not have printed")
+        console.error(err)
       }
       if (frameIdx === config.arrSize-1) {
         clearInterval(cPlayback)
@@ -63,7 +63,7 @@ class Recorder {
         let func = this.frameDispatch[currFrame.type]
         func.call(this, currFrame)
       } catch(err) {
-        console.error("This should not have printed")
+        console.error(err)
       }
       if (frameIdx === this.record.length-1) {
         clearInterval(playback)
