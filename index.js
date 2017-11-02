@@ -25,35 +25,6 @@ function insertDOMArray(DOMArrayHTML, el) {
   el.innerHTML = DOMArrayHTML
 }
 
-function selectionSort(arr) {
-  for (let oIdx = 0; oIdx < arr.length-1; oIdx++) {
-    let minVal = Number.POSITIVE_INFINITY
-    let minIdx = null
-    for (var iIdx = oIdx; iIdx < arr.length; iIdx++) {
-      if (arr[iIdx] < minVal) {
-        minVal = arr[iIdx]
-        minIdx = iIdx
-      }
-    }
-    if (minIdx) {
-      let temp = arr[oIdx]
-      arr[oIdx] = arr[minIdx]
-      arr[minIdx] = temp
-    }
-  }
-}
-
-function insertionSort(arr) {
-  let startIdx = 0
-  for (let startIdx = 0; startIdx < arr.length; startIdx++) {
-    for(let currIdx = startIdx; currIdx > 0 && arr[currIdx-1] > arr[currIdx]; currIdx--) {
-      let temp = arr[currIdx]
-      arr[currIdx] = arr[currIdx-1]
-      arr[currIdx-1] = temp
-    }
-  }
-}
-
 function play(recs) {
   let frameIdx = [0, 0]
   const playback = setInterval(() => {
@@ -89,8 +60,6 @@ function main() {
 
   selectionSort(watchedArrA)
   insertionSort(watchedArrB)
-  console.log(recA)
-  console.log(recB)
   play([recA, recB])
 }
 
