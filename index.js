@@ -13,7 +13,7 @@ function genRandomArr(size) {
   return arr
 }
 
-function genWatchedArrays(sorts) {
+function genWatchedArrays(sorts, cassette) {
   const baseArray = genRandomArr(config.arrSize)
 
   return sorts.map(wSort => {
@@ -23,10 +23,9 @@ function genWatchedArrays(sorts) {
 }
 
 function main() {
-  const watchedArrays = genWatchedArrays(config.sorts)
   const cassette = new Cassette()
+  const watchedArrays = genWatchedArrays(config.sorts, cassette)
   watchedArrays.forEach(arr => {
-    cassette.add(arr.tape)
     arr.runSort()
     arr.displayBenchmark()
   })

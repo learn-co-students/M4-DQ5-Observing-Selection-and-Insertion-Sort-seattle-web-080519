@@ -1,29 +1,44 @@
-class Recorder {
+class Tape {
 
   constructor(domRefs, arr) {
     this.arr = arr
     this.record = []
     this.domRefs = domRefs
-    this.animationDuration = config.animationDuration
-    this.heightMultiplier = config.heightMultiplier
-    this.frameDispatch = {
+    this.frameFuncDispatch = {
       "flash": this.flash,
       "updateBar": this.updateBar,
     }
+    this.currFrameIdx = 0
   }
 
+  rewind() {
+    this.currFrameIdx = 0
+  }
+
+  isFin() {
+    return (this.currFrameIdx === this.record.length)
+  }
+
+  step() {
+    const currFrame = this.record[this.currFrameIdx]
+    const action = this.frameFuncDispatch[currFrame.type]
+    action.call(this, currFrame)
+    this.currFrameIdx++
+  }
+
+  // abstract animations out of tape. into domarray?
   flash(frame) {
-    const el = this.domRefs[frame.id]
-    const bgColor = (frame.color === 'green') ? '#6E6' : '#E66'
-    el.style.backgroundColor = bgColor
+    const el = this.domRefs[frame.idx]
+    el.style.backgroundColor = frame.color
     setTimeout(() => {
       el.style.backgroundColor = '#66E'
-    }, this.animationDuration*2)
+    }, config.animationDuration)
   }
 
   updateBar(frame) {
-    this.domRefs[frame.id].style.height = `${frame.val * this.heightMultiplier}px`
-    this.domRefs[frame.id].innerHTML = frame.val
+    this.domRefs[frame.idx].style.height = `${frame.val * config.heightMultiplier}px`
+    this.domRefs[frame.idx].style.width = `${frame.val * config.widthMultiplier}px`
+    this.domRefs[frame.idx].innerHTML = frame.val
   }
 
   capture(frame) {
@@ -51,27 +66,7 @@ class Recorder {
         prevVal = this.arr[frameIdx]
         frameIdx++
       }
-    }, this.animationDuration * 3)
-  }
-
-  play() {
-    let frameIdx = 0
-    const playback = setInterval(() => {
-      let currFrame = this.record[frameIdx]
-      try {
-        // what is going on here -- erroring outside of the try but never hitting the error block when its wrapped...try removing the try catch and see in console
-        let func = this.frameDispatch[currFrame.type]
-        func.call(this, currFrame)
-      } catch(err) {
-        console.error(err)
-      }
-      if (frameIdx === this.record.length-1) {
-        clearInterval(playback)
-        this.crescendo()
-      } else {
-        frameIdx++ // JANKMASTER!
-      }
-    }, this.animationDuration)
+    }, config.animationDuration * 3)
   }
 
 }

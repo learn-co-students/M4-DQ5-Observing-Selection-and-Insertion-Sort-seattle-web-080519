@@ -1,14 +1,15 @@
 const config = {
-  arrSize: 100,
-  heightMultiplier: 3,
-  animationDuration: 10, // ms
+  arrSize: 20,
+  heightMultiplier: 10,
+  frameDuration: 30, // ms
+  animationDuration: 40, // ms
   sorts: [
     {
-      name: "selection",
+      id: "selection",
       func: selectionSort
     },
     {
-      name: "insertion",
+      id: "insertion",
       func: insertionSort
     },
   ]
