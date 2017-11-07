@@ -3,10 +3,20 @@ class DomArray {
   constructor(arr, domId) {
     this.arr = arr
     this.domId = domId
+    // todo abstract this
+    this.domArrContainer = document.createElement("div")
+    this.domArrContainer.setAttribute("id", `${domId}-container`)
+    this.domArrContainer.classList.add("array-list-container");
+
     this.domArr = document.createElement("ul")
     this.domArr.setAttribute("id", domId)
     this.domArr.classList.add("array-list");
-    document.getElementById("array-display-container").appendChild(this.domArr)
+
+    // this is all sloppy dop abstract please
+    document.getElementById("array-display-container").appendChild(this.domArrContainer)
+    document.getElementById(`${domId}-container`).appendChild(this.domArr)
+    this.statBox = new StatBox(`${domId}-container`)
+
     this.insertListHTML(this.domArr)
     return this.getDomRefs() // for quicker access than looking up in real time
   }

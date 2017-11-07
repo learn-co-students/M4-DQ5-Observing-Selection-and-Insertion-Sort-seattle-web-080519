@@ -17,6 +17,33 @@ html, body {
 
 }
 
+.array-list-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.stat-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 150px;
+  height: inherit;
+  border: 2px white solid;
+  padding: 25px 0;
+}
+
+.stat-box, h1, h2 {
+  margin: 0 10px;
+}
+
+.counter-container {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  font-size: 5pt;
+}
+
 .array-list {
   display: flex;
   justify-content: center;
