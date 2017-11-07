@@ -16,6 +16,7 @@ class Cassette {
 
       playingTapes.forEach(tape => {
         if (tape.isFin()) {
+          tape.crescendo()
           playingTapes.delete(tape)
           return
         }

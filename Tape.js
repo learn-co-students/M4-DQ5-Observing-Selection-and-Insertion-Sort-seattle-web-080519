@@ -65,7 +65,7 @@ class Tape {
         prevVal = this.arr[frameIdx]
         frameIdx++
       }
-    }, config.animationDuration * 3)
+    }, config.animationDuration)
   }
 
 }

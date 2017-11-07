@@ -1,5 +1,5 @@
 const config = {
-  arrSize: 30,
+  arrSize: 40,
   heightMultiplier: 4,
   frameDuration: 20, // ms
   animationDuration: 40, // ms
