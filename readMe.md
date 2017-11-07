@@ -2,7 +2,7 @@
 
 All you need to focus on is writing two sorting algorithms. One in ```sorts/insertionSort.js``` and the other in ```sorts/selectionSort.js```.
 
-Open ```index.html``` to see your sorting algorithm played back to you visually:
+Open ```index.html``` to see your sorting algorithm played back to you visually in the browser:
   - A red flash indicates that an array element has been *written*
   - A green flash indicates that an array element has been *read*
 
