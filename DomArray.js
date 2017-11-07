@@ -20,7 +20,7 @@ class DomArray {
 
   genDOMArrayHTML() {
     const list = this.arr.map((val, idx) => (
-      `<img src='./piglet.png' class='bar' id='${this.domId}-${idx}' style="height:${val * config.heightMultiplier}px">${val}</img>`
+      `<li class='bar' id='${this.domId}-${idx}' style="height:${val * config.heightMultiplier}px"></li>`
     ))
     return list.join('')
   }

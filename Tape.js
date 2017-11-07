@@ -38,7 +38,6 @@ class Tape {
   updateBar(frame) {
     this.domRefs[frame.idx].style.height = `${frame.val * config.heightMultiplier}px`
     this.domRefs[frame.idx].style.width = `${frame.val * config.widthMultiplier}px`
-    this.domRefs[frame.idx].innerHTML = frame.val
   }
 
   capture(frame) {

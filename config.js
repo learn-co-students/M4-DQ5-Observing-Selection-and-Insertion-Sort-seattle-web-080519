@@ -1,7 +1,7 @@
 const config = {
   arrSize: 20,
-  heightMultiplier: 10,
-  frameDuration: 30, // ms
+  heightMultiplier: 4,
+  frameDuration: 20, // ms
   animationDuration: 40, // ms
   sorts: [
     {

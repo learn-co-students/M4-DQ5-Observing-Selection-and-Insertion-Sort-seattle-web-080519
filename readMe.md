@@ -7,7 +7,7 @@ Open ```index.html``` to see your sorting algorithm played back to you visually:
   - A green flash indicates that an array element has been *read*
 
 ### Deliverables
-  - Write insertion and selection sort
+  - Write insertion and selection sort in the ```./src``` directory
   - Understanding that one visual action (either a read or write) is occurring for each array every frame, describe what this is an accurate (and inaccurate) time representation of
   - Provide an explanation for the different speeds of the sorts
   - Provide an explanation for how both changes in array sizes as well as changes in how scrambled the arrays are would affect performance for the sorting algorithms
