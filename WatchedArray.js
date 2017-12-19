@@ -4,7 +4,8 @@ class WatchedArray {
     this.arr = arr
     this.sortFunc = sortFunc
     this.domId = domId
-
+    this.gets = 0
+    this.sets = 0
     this.domArray = new DomArray(this.arr, this.domId)
     this.tape = new Tape(this.domArray, this.arr)
     cassette.add(this.tape)
@@ -12,14 +13,17 @@ class WatchedArray {
     // TODO abstract traps out of here
     this.traps = {
       get: (target, property) => {
-        if (property >= 0 && property <= this.arr.length)
+        if (property >= 0 && property <= this.arr.length) {
+          this.gets++
           this.tape.capture({type: "flash", color: '#6E6', domId: `${domId}-${property}`, idx: property})
+        }
         return target[property]
       },
 
       set: (target, property, value, receiver) => {
         target[property] = value
         if (property >= 0 && property <= this.arr.length) {
+          this.sets++
           this.tape.capture({type: "updateBar", domId: `${domId}-${property}`, idx: property, val: value})
           this.tape.capture({type: "flash", color: '#E66', domId: `${domId}-${property}`, idx: property})
         }
@@ -35,7 +39,9 @@ class WatchedArray {
   }
 
   displayBenchmark() {
-    // write
+    document.getElementById(`${this.domId}-container-read-write`).innerText = this.gets + this.sets
+    document.getElementById(`${this.domId}-container-read`).innerText = this.gets
+    document.getElementById(`${this.domId}-container-write`).innerText = this.sets
   }
 
 }

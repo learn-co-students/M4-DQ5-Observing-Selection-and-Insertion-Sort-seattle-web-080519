@@ -61,6 +61,7 @@ class Tape {
       }
       if (frameIdx === config.arrSize-1) {
         clearInterval(cPlayback)
+        document.getElementById(`${this.domRefs[0].parentNode.id}-container-stats`).classList.add("fade-down-in")
       } else {
         prevVal = this.arr[frameIdx]
         frameIdx++

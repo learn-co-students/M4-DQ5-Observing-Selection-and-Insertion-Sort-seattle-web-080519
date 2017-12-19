@@ -11,10 +11,12 @@ class StatBox {
     this.rCounterContainer.classList.add("counter-container")
     this.wCounterContainer.classList.add("counter-container")
 
-
     this.rwCounterText = document.createElement("h1")
     this.rCounterText = document.createElement("h1")
     this.wCounterText = document.createElement("h1")
+    this.rwCounterText.classList.add("stat-h1s-sloppy-dop")
+    this.rCounterText.classList.add("stat-h1s-sloppy-dop")
+    this.wCounterText.classList.add("stat-h1s-sloppy-dop")
     this.rwCounterText.innerHTML = "Read/Write"
     this.rCounterText.innerHTML = "Read"
     this.wCounterText.innerHTML = "Write"
@@ -22,6 +24,9 @@ class StatBox {
     this.rwCounter = document.createElement("h2")
     this.rCounter = document.createElement("h2")
     this.wCounter = document.createElement("h2")
+    this.rwCounter.id = `${domId}-read-write`
+    this.rCounter.id = `${domId}-read`
+    this.wCounter.id = `${domId}-write`
     this.rwCounter.innerHTML = 0
     this.rCounter.innerHTML = 0
     this.wCounter.innerHTML = 0

@@ -12,8 +12,15 @@ class DomArray {
     this.domArr.setAttribute("id", domId)
     this.domArr.classList.add("array-list");
 
+    this.title = document.createElement("h1")
+    this.title.innerHTML = domId.charAt(0).toUpperCase() + domId.slice(1)
+    this.title.id = `${domId}-title`
+    this.title.classList.add("title")
+
     // this is all sloppy dop abstract please
-    document.getElementById("array-display-container").appendChild(this.domArrContainer)
+    const container = document.getElementById("array-display-container")
+    container.appendChild(this.title)
+    container.appendChild(this.domArrContainer)
     document.getElementById(`${domId}-container`).appendChild(this.domArr)
     this.statBox = new StatBox(`${domId}-container`)
 
