@@ -3,6 +3,7 @@ class DomArray {
   constructor(arr, domId) {
     this.arr = arr
     this.domId = domId
+    
     // todo abstract this
     this.domArrContainer = document.createElement("div")
     this.domArrContainer.setAttribute("id", `${domId}-container`)
