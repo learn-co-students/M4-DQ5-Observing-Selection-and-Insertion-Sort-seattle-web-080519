@@ -4,7 +4,7 @@ All you need to focus on is writing two sorting algorithms. One in ```sorts/inse
 
 ## [Selection Sort](https://en.wikipedia.org/wiki/Selection_sort)
   - for every item in the collection
-  - find the smallest element in the unsorted portion of the array and place it accordingly
+  - find the smallest item in the unsorted portion of the array and swap it with the current item
 
 ## [Insertion Sort](https://en.wikipedia.org/wiki/Insertion_sort)
   - for every item in the collection
@@ -14,6 +14,10 @@ All you need to focus on is writing two sorting algorithms. One in ```sorts/inse
 Open ```index.html``` to see your sorting algorithm played back to you visually in the browser:
   - A red flash indicates that an array element has been *written*
   - A green flash indicates that an array element has been *read*
+
+#### Here is how your solution may look:
+![Alt Text](./assets/example-solution.gif)
+
 
 ### Deliverables
   - Write insertion and selection sort in the ```./src``` directory
