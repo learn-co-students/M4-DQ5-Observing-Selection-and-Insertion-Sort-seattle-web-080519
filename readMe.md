@@ -3,11 +3,11 @@
 All you need to focus on is writing two sorting algorithms. One in ```sorts/insertionSort.js``` and the other in ```sorts/selectionSort.js```.
 
 ## [Selection Sort](https://en.wikipedia.org/wiki/Selection_sort)
-  - for every item in the collection
+  1. for every item in the collection
   - find the smallest item in the unsorted portion of the array and swap it with the current item
 
 ## [Insertion Sort](https://en.wikipedia.org/wiki/Insertion_sort)
-  - for every item in the collection
+  1. for every item in the collection
   - check if the previous item is greater than the current item
   - if greater, the current item is not in place: swap it with the previous item and repeat
 
