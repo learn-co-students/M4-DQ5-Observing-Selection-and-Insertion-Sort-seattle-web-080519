@@ -23,7 +23,7 @@ Open ```index.html``` to see your sorting algorithm played back to you visually 
 
 #### Here is how your solution may look:
 
-![Example Solution](https://curriculum-content.s3.amazonaws.com/react/example-solution.gif)
+![Example Solution](https://curriculum-content.s3.amazonaws.com/react/example-solution-minified.gif)
 
 
 ### Deliverables
